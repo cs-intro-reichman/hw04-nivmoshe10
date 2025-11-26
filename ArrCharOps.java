@@ -168,30 +168,31 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        int L1 = str1.length();
-        int L2 = str2.length();
-        int min = Math.min(L1, L2);
+    int L1 = str1.length();
+    int L2 = str2.length();
+    int min = Math.min(L1, L2);
 
-        for (int i = 0; i < min; i++) {
-            if (str1.charAt(i) < str2.charAt(i)) {
-                return -1;
-            }
-            else if (str1.charAt(i) > str2.charAt(i)) {
-                return 1;  
-                }
-            }
-           
-            if (L1 == L2) {
-            return 0;
-            } 
-            else if (L1 < L2) {
-            return -1;
-            } 
-            else {
-            return 1;
-                }
-            }
-        }  
+    
+    for (int i = 0; i < min; i++) {
+        char c1 = str1.charAt(i);
+        char c2 = str2.charAt(i);
+
+        if (c1 < c2) {
+            return -1;   
+        } else if (c1 > c2) {
+            return 1;    
+        }
+        
+    }
+    if (L1 == L2) {
+        return 0;        
+    } else if (L1 < L2) {
+        return -1;       
+    } else {
+        return 1;       
+        }
+    }
+}
     
 
 
